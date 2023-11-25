@@ -4,6 +4,7 @@ import com.company.sys.pojo.Result;
 import com.company.sys.pojo.Room;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +23,6 @@ public class RoomController {
     public Result list(){
         log.info("查询全部房间信息");
         List<Room> roomList=roomService.list();
-        System.out.println(roomList);
         return Result.success(roomList);
     }
 }
