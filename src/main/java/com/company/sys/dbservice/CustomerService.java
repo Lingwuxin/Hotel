@@ -8,4 +8,10 @@ public interface CustomerService {
     List<Customer> list();
 
     void save(Customer customer);
+
+    Integer insert(Customer customer);
+
+
+
+    void checkOutById(Integer customerId);
 }

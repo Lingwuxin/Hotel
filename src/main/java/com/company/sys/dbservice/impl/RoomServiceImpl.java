@@ -20,4 +20,16 @@ public class RoomServiceImpl implements RoomService {
     public List<Room> list() {
         return roomMapper.list();
     }
+
+    @Override
+    public Integer updateRoomStatusByRoomNum(Integer roomNumber) {
+        return roomMapper.updateRoomStatusByRoomNum(roomNumber);
+    }
+
+    @Override
+    public void checkOutByRoomId(Integer roomid) {
+        roomMapper.checkOutByRoomId(roomid);
+    }
+
+
 }

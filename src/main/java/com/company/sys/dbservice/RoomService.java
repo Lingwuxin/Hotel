@@ -11,4 +11,10 @@ public interface RoomService {
      * @return 包含全部房间数据的列表
      */
     List<Room> list();
+
+    Integer updateRoomStatusByRoomNum(Integer roomNumber);
+
+
+
+    void checkOutByRoomId(Integer roomid);
 }

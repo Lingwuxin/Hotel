@@ -1,8 +1,7 @@
 package com.company.sys.mapper;
 
 import com.company.sys.pojo.Room;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -18,4 +17,10 @@ public interface RoomMapper {
      */
     @Select("select * from Room")
     List<Room> list();
+
+    @Update("UPDATE Room SET Status = 'Occupied' WHERE RoomNumber = #{num}")
+    @Options(useGeneratedKeys = true, keyProperty = "roomId", keyColumn = "RoomID")
+    Integer updateRoomStatusByRoomNum(@Param("num") Integer num);
+    @Update("UPDATE Room SET Status = '0' WHERE RoomID = #{roomid}")
+    void checkOutByRoomId(Integer roomid);
 }

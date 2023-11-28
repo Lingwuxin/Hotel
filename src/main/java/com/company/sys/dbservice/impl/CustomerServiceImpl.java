@@ -24,4 +24,16 @@ public class CustomerServiceImpl implements CustomerService {
     public void save(Customer customer) {
         customerMapper.save(customer);
     }
+
+    @Override
+    public Integer insert(Customer customer) {
+        customerMapper.insert(customer);
+        return customer.getCustomerID();
+    }
+
+    @Override
+    public void checkOutById(Integer customerId) {
+        customerMapper.checkOutById(customerId);
+    }
+
 }
