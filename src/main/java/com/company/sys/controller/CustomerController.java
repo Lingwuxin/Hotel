@@ -23,7 +23,7 @@ public class CustomerController {
         List<Customer> customers=customerService.list();
         return Result.success(customers);
     }
-    @PostMapping("customer/register")
+    @PostMapping("/customer")
     public Result register(@RequestBody Customer customer) {
         log.info("登记住客信息: {}", customer);
 

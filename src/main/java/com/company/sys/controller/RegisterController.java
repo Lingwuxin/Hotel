@@ -51,7 +51,7 @@ public class RegisterController {
         reservationService.save(reservation);
         return Result.success("住客信息登记成功");
     }
-    @DeleteMapping("/checkout/{customerId}")
+    @PostMapping("/checkout/{customerId}")
     public Result checkout(@PathVariable("customerId") Integer customerId){
         customerService.checkOutById(customerId);
         reservationService.checkOutByCustomerId(customerId);
